@@ -1,0 +1,82 @@
+{
+  "html": [
+    {
+      "parent": {
+        "type": "nav",
+        "id": "menuContainer"
+      },
+      "child": [
+        {
+          "type": "ul",
+          "id": "menuItemContainer"
+        }
+      ],
+      "innerChild": [
+        {
+          "type": "li",
+          "class": "menuItem"
+        },
+        {
+          "type": "li",
+          "class": "menuItem"
+        },
+        {
+          "type": "li",
+          "class": "menuItem"
+        }
+      ]
+    },
+    {
+      "parent": {
+        "type": "section",
+        "id": "cardContainer"
+      },
+      "child": [
+        {
+          "type": "div",
+          "id": "card"
+        }
+      ],
+      "innerChild": [
+        {
+          "type": "div",
+          "id": "headline"
+        },
+        {
+          "type": "div",
+          "id": "imagecon"
+        },
+        {
+          "type": "div",
+          "id": "content"
+        },
+        {
+          "type": "div",
+          "id": "info"
+        }
+      ]
+    },
+    {
+      "parent": {
+        "type": "footer",
+        "id": "footer"
+      }
+    },
+    {
+      "parent": {
+        "type": "div",
+        "id": "infochild"
+      },
+      "child": [
+        {
+          "type": "div",
+          "id": "strength"
+        },
+        {
+          "type": "div",
+          "id": "lives"
+        }
+      ]
+    }
+  ]
+}
