@@ -72,6 +72,37 @@ export class ShowActors {
 
     })
 
+
+    let carDeck = document.querySelector('#card');
+    let info = document.querySelector('#info') as HTMLElement;
+    let infoChild = document.querySelector('#infochild') as HTMLElement
+    info.appendChild(infoChild);
+
+    carDeck.addEventListener("click", (e) => {
+ 
+      if (ShowActors.currentDataIndex > -1) {
+
+      info.style.display = "block";
+
+      gsap.to(info, {
+      duration: 0.05,
+      rotate: 10,
+      scale:1.3,
+      repeat: 3,
+      transformOrigin: "center",
+      yoyo: true
+      });
+
+      let addInfo = ShowActors.information[ShowActors.currentDataIndex];
+      let mstr = document.querySelector('#strength');
+      mstr.textContent=`${addInfo.strength}`
+
+      let mLives = document.querySelector('#lives');
+      mLives.textContent=`${addInfo.lives}`
+    }
+
+  })
+
     const imgNinja = require("./assets/images/ninja.png");
     const showImg = document.createElement("img");
     showImg.id = "showImg";
@@ -82,20 +113,22 @@ export class ShowActors {
 
   changeContent(this: HTMLElement, event: Event) {
 
+    let info = document.querySelector('#info') as HTMLElement;
+    info.style.display = "none";
+
     ShowActors.currentDataIndex = parseInt(this.dataset.index);
 
     let mHeadline = document.querySelector('#headline') as HTMLElement;
     mHeadline.textContent = ShowActors.nameArray[ShowActors.currentDataIndex];
-
 
     const imageSrc = ShowActors.imageArray[ShowActors.currentDataIndex];
     const img = require("./assets/images/" + imageSrc);
     let mImg = document.querySelector('#showImg') as HTMLImageElement;
     mImg.src = img;
 
+
     let mContent = document.querySelector('#content') as HTMLElement;
     mContent.textContent = ShowActors.myContentArray[ShowActors.currentDataIndex];
-
 
     let elem = document.querySelector('#cardContainer') as HTMLElement;
 
@@ -107,9 +140,6 @@ export class ShowActors {
       repeat: 3,
       yoyo: true
     })
-
-
   }
-
 
 } //End Class
